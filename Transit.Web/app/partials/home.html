@@ -1,0 +1,16 @@
+﻿<form name="config" ng-submit="go()">
+    <label for="agency">Agency: </label>
+    <select id="agency" ng-options="a for a in agencies" ng-model="agency" required></select>
+    <label for="zip">Zip: </label>
+    <input type="tel" id="zip" ng-model="zip" required />
+    <button type="submit">Go</button>
+</form>
+<div>
+    Station list:
+    <ul>
+        <li ng-repeat="station in stations">{{station}}</li>
+    </ul>
+</div>
+<div>
+    MAP HERE
+</div>
