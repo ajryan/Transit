@@ -14,10 +14,11 @@ namespace Transit.Web
                     "~/scripts/angular-resource.js",
                     "~/scripts/angular-route.js",
                     "~/app/app.js",
-                    "~/app/models/*.js",
+                    //"~/app/models/*.js",
                     "~/app/services/*.js",
-                    "~/app/controllers/*.js",
-                    "~/app/directives/*.js"));
+                    "~/app/controllers/*.js"
+                    //"~/app/directives/*.js"
+                    ));
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundles/css")
                 .Include(
