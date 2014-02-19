@@ -1,16 +1,34 @@
-﻿<form name="config" ng-submit="go()">
-    <label for="agency">Agency: </label>
-    <select id="agency" ng-options="a for a in agencies" ng-model="agency" required></select>
-    <label for="zip">Zip: </label>
-    <input type="tel" id="zip" ng-model="zip" required />
-    <button type="submit">Go</button>
-</form>
-<div>
-    Station list:
-    <ul>
-        <li ng-repeat="station in stations">{{station}}</li>
-    </ul>
+﻿<div class="station-ui">
+    <header>
+        <h1><a href="/">Transit</a></h1>
+        <h2>Public Transit Browser</h2>
+    </header>
+    <form name="config" ng-submit="go()" class="station-form">
+        <div>
+            <label for="agency">Agency: </label>
+            <select id="agency"
+                    ng-options="a for a in agencies"
+                    ng-model="agency"
+                    required></select>
+        </div>
+        <div>
+            <label for="zip">Zip: </label>
+            <input type="tel" id="zip" ng-model="zip" required />
+        </div>
+        <button type="submit">Go</button>
+    </form>
+    <div class="station-list">
+        Station list:
+        <ul>
+            <li ng-repeat="station in stations">{{station}}</li>
+        </ul>
+    </div>
 </div>
-<div>
-    MAP HERE
+<div class="station-map">
+    <leaflet width="100%"
+             height="100%"
+             tiles="tiles"
+             center="center"
+             markers="markers">
+    </leaflet>
 </div>

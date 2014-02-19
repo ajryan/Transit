@@ -29,13 +29,13 @@ module Transit.Services {
                     var json = this._x2js.xml_str2json(data);
                     return json;
                 }
-            }).success((data: any, s)=> {
-                var stations: IStation[] = data.root.stations.station.map(s=> {
+            }).success((data: any)=> {
+                var stations: IStation[] = data.root.stations.station.map(s => {
                     var station: IStation =  {
                         name: s.name,
                         abbrev: s.abbr,
-                        lat: s.gtfs_latitude,
-                        lng: s.gtfs_longitude,
+                        lat: parseFloat(s.gtfs_latitude),
+                        lng: parseFloat(s.gtfs_longitude),
                         address: [s.address, s.city, s.state, s.zipcode].join(' ') 
                     };
                     return station;

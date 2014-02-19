@@ -26,13 +26,13 @@ var Transit;
                         var json = _this._x2js.xml_str2json(data);
                         return json;
                     }
-                }).success(function (data, s) {
+                }).success(function (data) {
                     var stations = data.root.stations.station.map(function (s) {
                         var station = {
                             name: s.name,
                             abbrev: s.abbr,
-                            lat: s.gtfs_latitude,
-                            lng: s.gtfs_longitude,
+                            lat: parseFloat(s.gtfs_latitude),
+                            lng: parseFloat(s.gtfs_longitude),
                             address: [s.address, s.city, s.state, s.zipcode].join(' ')
                         };
                         return station;

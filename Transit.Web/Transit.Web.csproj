@@ -105,10 +105,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\partials\home.html" />
+    <Content Include="content\images\marker-shadow.png" />
+    <Content Include="content\leaflet.css" />
     <Content Include="content\reset.css" />
     <Content Include="content\site.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="scripts\angular-leaflet-directive.js" />
+    <Content Include="scripts\angular-leaflet-directive.min.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
@@ -117,6 +121,8 @@
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\leaflet-0.6.4.js" />
+    <Content Include="scripts\leaflet-0.6.4.min.js" />
     <Content Include="scripts\TypeLite.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TypeLite.d.ts</LastGenOutput>
@@ -124,7 +130,6 @@
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
-    <None Include="Properties\PublishProfiles\Disk.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

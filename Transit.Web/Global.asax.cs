@@ -9,6 +9,7 @@ namespace Transit.Web
         {
             BundleTable.Bundles.Add(new ScriptBundle("~/bundles/app")
                 .Include(
+                    "~/scripts/leaflet-{version}.js",
                     "~/scripts/xml2json.js",
                     "~/scripts/angular.js",
                     "~/scripts/angular-resource.js",
@@ -16,12 +17,13 @@ namespace Transit.Web
                     "~/app/app.js",
                     //"~/app/models/*.js",
                     "~/app/services/*.js",
-                    "~/app/controllers/*.js"
+                    "~/app/controllers/*.js",
                     //"~/app/directives/*.js"
-                    ));
+                    "~/scripts/angular-leaflet-directive.js"));
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundles/css")
                 .Include(
+                    "~/content/leaflet.css",
                     "~/content/reset.css",
                     "~/content/site.css"));
         }

@@ -1,7 +1,7 @@
 module Transit {
     'use strict';
 
-    export var App = angular.module('MyApp', ['ngResource', 'ngRoute']);
+    export var App = angular.module('MyApp', ['ngResource', 'ngRoute', 'leaflet-directive']);
 
     App.config([
         '$routeProvider',

@@ -1,3 +1,28 @@
 ﻿body {
-    color: #333;
+  color: #333;
+}
+
+.station-ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 17em;
+  overflow: auto;
+}
+
+.station-form label {
+  width: 5em;
+  display: inline-block;
+}
+
+.station-list {
+}
+
+.station-map {
+  position: fixed;
+  left: 17em;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
