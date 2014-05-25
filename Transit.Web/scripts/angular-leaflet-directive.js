@@ -651,7 +651,7 @@ angular.module("leaflet-directive").directive('markers', function ($log, $rootSc
 
                                 // Bind message
                                 if (isDefined(markerData.message)) {
-                                    marker.bindPopup(markerData.message);
+                                    marker.bindPopup(markerData.message, {autoPanPadding: markerData.autoPanPadding});
                                 }
 
                                 // Add the marker to a cluster group if needed

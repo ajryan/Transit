@@ -1,6 +1,6 @@
-﻿<div class="station-ui">
+﻿<div class="station-ui" ng-show="menuShown">
     <header>
-        <h1><a href="/">Transit</a></h1>
+        <h1 ng-click="hideMenu()" class="clickable">Transit &lt;&lt;</h1>
         <h2>Public Transit Browser</h2>
     </header>
     <form name="config" ng-submit="go()" class="station-form">
@@ -16,15 +16,23 @@
             <input type="tel" id="zip" ng-model="zip" required />
         </div>
         <button type="submit">Go</button>
+        <button ng-click="recenter()">Center</button>
     </form>
     <div class="station-list">
         Station list:
+        <input type="checkbox" ng-model="showAllStations" />Show all
         <ul>
-            <li ng-repeat="station in stations">{{station}}</li>
+            <li ng-repeat="station in stations">
+                <span class="clickable station" 
+                      ng-click="selectStation(station)"
+                      ng-show="showAllStations || station.visible">
+                    {{station.name}}
+                </span>
+            </li>
         </ul>
     </div>
 </div>
-<div class="station-map">
+<div class="station-map" ng-style="mapStyle">
     <leaflet width="100%"
              height="100%"
              tiles="tiles"
@@ -32,3 +40,13 @@
              markers="markers">
     </leaflet>
 </div>
+<div class="departures" ng-show="selectedDepartures">
+    <h3>{{selectedStation.name}}</h3>
+    <div ng-repeat="departure in selectedDepartures">
+        <h4 class="departure-destination">{{departure.destination}}</h4>
+        <div class="departure-time" ng-repeat="time in departure.times">
+            {{time.minutes}}min - {{time.info}}
+        </div>
+    </div>
+</div>
+<div class="menu-show-button clickable" ng-click="showMenu()" ng-hide="menuShown"><h2>&gt;&gt;</h2></div>

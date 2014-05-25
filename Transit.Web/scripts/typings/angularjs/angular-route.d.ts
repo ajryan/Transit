@@ -41,6 +41,7 @@ declare module ng.route {
         resolve?: any;
         redirectTo?: any;
         reloadOnSearch?: boolean;
+        caseInsensitiveMatch?: boolean;
     }
 
     // see http://docs.angularjs.org/api/ng.$route#current
@@ -54,7 +55,7 @@ declare module ng.route {
     }
 
     interface IRouteProvider extends IServiceProvider {
-        otherwise(params: any): IRouteProvider;
+        otherwise(params: IRoute): IRouteProvider;
         /**
          * This is a description
          *

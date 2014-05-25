@@ -1,14 +1,37 @@
 ﻿body {
   color: #333;
+  font-family: 'Segoe UI', 'Segoe', 'Calibri', 'Helvetica Neue', sans-serif;
 }
+h2 {
+  font-size: 1.2em;
+}
+.station {
+  color: blue;
+}
+  .station:hover {
+    text-decoration: underline;
+  }
 
 .station-ui {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
+  padding-left: 0.25em;
   width: 17em;
   overflow: auto;
+}
+
+.menu-show-button {
+  position: fixed;
+  top: 5em;
+  left: 0.25em;
+  background: #fff;
+  border: 1px solid #888;
+  padding: 0.25em;
+  -webkit-box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+  -ms-box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+  box-shadow: 0 1px 7px rgba(0,0,0,0.65);
 }
 
 .station-form label {
@@ -21,8 +44,26 @@
 
 .station-map {
   position: fixed;
-  left: 17em;
+  /*left: 17em;*/
   top: 0;
   right: 0;
   bottom: 0;
+}
+
+.departures {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: #eee;
+  border: 1px solid #888;
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+.departure-destination {
+  background-color: #ccc;
+}
+
+.clickable {
+  cursor: pointer;
 }
