@@ -7,4 +7,13 @@
 <#@ import namespace="TypeLite.Net4" #> 
 <#@output extension=".d.ts"#>
 
-<# // TypeScript.Definitions().ForLoadedAssemblies() #>
+ <#@include file="Manager.ttinclude"#>
+
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+
+<# var ts = TypeScript.Definitions().For<Transit.Web.Models.IStation>();
+#>
+
+<#= ts.Generate(TsGeneratorOutput.Properties) #>
+
+<# manager.Process(true); #>

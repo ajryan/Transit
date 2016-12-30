@@ -4,15 +4,15 @@ declare module L {
     export function point(x: number, y: number): any;
 }
 
-module Transit.Services {
-    export interface IStation {
-        name: string;
-        abbrev: string;
-        lat: number;
-        lng: number;
-        address: string;
-        visible: boolean;
-    }
+module Transit.Web.Models {
+    //export interface IStation {
+    //    name: string;
+    //    abbrev: string;
+    //    lat: number;
+    //    lng: number;
+    //    address: string;
+    //    visible: boolean;
+    //}
 
     export interface IDeparture {
         destination: string;

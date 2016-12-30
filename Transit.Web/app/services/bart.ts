@@ -1,4 +1,7 @@
 module Transit.Services {
+    import ITransitService = Transit.Web.Models.ITransitService;
+    import IStation = Transit.Web.Models.IStation;
+    import IDeparture = Transit.Web.Models.IDeparture;
     'use strict';
 
     // external xml2json library with no TypeScript definitions
@@ -30,14 +33,32 @@ module Transit.Services {
                 return deferred.promise;
             }
 
-            this.$http.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V', this._xmlJsTransform).success((data: any) => {
-                var stations: IStation[] = data.root.stations.station.map(s => {
+            //this.$http.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V', this._xmlJsTransform).success((data: any) => {
+            //    var stations: IStation[] = data.root.stations.station.map(s => {
+            //        var station: IStation =  {
+            //            name: s.name,
+            //            abbrev: s.abbr,
+            //            lat: parseFloat(s.gtfs_latitude),
+            //            lng: parseFloat(s.gtfs_longitude),
+            //            address: [s.address, s.city, s.state, s.zipcode].join(' '),
+            //            visible: true
+            //        };
+            //        return station;
+            //    });
+            //    this._stations = stations;
+            //    deferred.resolve(stations);
+            //}).error(() => {
+            //    deferred.reject('Error calling BART API.');
+            //});
+
+            this.$http.get('/api/ClienteerContacts').success((data: any) => {
+                var stations: IStation[] = data.map(s => {
                     var station: IStation =  {
+                        abbrev: s.abbrev,
                         name: s.name,
-                        abbrev: s.abbr,
-                        lat: parseFloat(s.gtfs_latitude),
-                        lng: parseFloat(s.gtfs_longitude),
-                        address: [s.address, s.city, s.state, s.zipcode].join(' '),
+                        lat: s.lat,
+                        lng: s.lng,
+                        address: s.address,
                         visible: true
                     };
                     return station;

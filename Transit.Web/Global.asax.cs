@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Http;
 using System.Web.Optimization;
 
 namespace Transit.Web
@@ -26,6 +27,8 @@ namespace Transit.Web
                     "~/content/leaflet.css",
                     "~/content/reset.css",
                     "~/content/site.css"));
+
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
         }
     }
 }

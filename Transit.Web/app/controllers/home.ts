@@ -4,14 +4,14 @@ module Transit.Controllers {
         agencies: string[];
         agency: string;
         zip: number;
-        stations: Transit.Services.IStation[];
+        stations: Transit.Web.Models.IStation[];
         markers: any;
         tiles: any;
         center: any;
         showAllStations: boolean;
-        selectedStation: Transit.Services.IStation;
+        selectedStation: Transit.Web.Models.IStation;
         selectedMarker: any;
-        selectedDepartures: Transit.Services.IDeparture[];
+        selectedDepartures: Transit.Web.Models.IDeparture[];
         menuShown: boolean;
         mapStyle: any;
         go(): void;
@@ -58,7 +58,7 @@ module Transit.Controllers {
                     return false;
                 });
                 
-                bartService.getDepartures(args[0].markerName).then((departures: Transit.Services.IDeparture[]) => {
+                bartService.getDepartures(args[0].markerName).then((departures: Transit.Web.Models.IDeparture[]) => {
                     console.log(departures);
                     $scope.selectedDepartures = departures;
                 });
@@ -83,7 +83,7 @@ module Transit.Controllers {
 
                 bartService.getStations().then(stations => {
                     $scope.stations = stations;
-                    stations.forEach((s: Transit.Services.IStation) => {
+                    stations.forEach((s: Transit.Web.Models.IStation) => {
                         $scope.markers[s.abbrev] = {
                             lat: s.lat,
                             lng: s.lng,
